@@ -13,3 +13,39 @@
 
 // At the end, a message should be displayed:
 // "The Hero has a balance of {balanceWins} wins and is at the {level} level"
+
+
+getHero("Deadpool", 19, 10);
+getHero("Wolverine", 35, 20);
+getHero("Miranha", 60, 30);
+getHero("Xavier Carequinha", 80, 20);
+getHero("Beast", 100, 15);
+getHero("Ciclop", 130, 35);
+getHero("Magneto", 120, 15);
+getHero("Fênix", 1000, 0);
+
+function defineLevel(balance, losses) {
+    if (balance > 100 && losses === 0) {
+        return "Master Highlander";
+    } else if (balance > 100) {
+        return "Immortal";
+    } else if (balance >= 91) {
+        return "Legendary";
+    } else if (balance >= 81) {
+        return "Diamond";
+    } else if (balance >= 51) {
+        return "Gold";
+    } else if (balance >= 21) {
+        return "Silver";
+    } else if (balance >= 10) {
+        return "Bronze";
+    } else {
+        return "Iron";
+    }
+}
+
+function getHero(hero, wins, losses) {
+    let balance = wins - losses;
+    let level = defineLevel(balance, losses);
+    console.log("O Herói " + hero + " está no nível " + level);
+}
