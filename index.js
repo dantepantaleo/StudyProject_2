@@ -47,5 +47,5 @@ function defineLevel(balance, losses) {
 function getHero(hero, wins, losses) {
     let balance = wins - losses;
     let level = defineLevel(balance, losses);
-    console.log("O Herói " + hero + " está no nível " + level);
+    console.log("The hero " + hero + " has a balance of " + balance + " victories and is at the level " + level);
 }
